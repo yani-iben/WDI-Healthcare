@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Group 2">
+
+<title>Final Group Quarto Script</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Group 2, Final Code v2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Group 2, Final Code v2_files/libs/quarto-html/quarto.js"></script>
+<script src="Group 2, Final Code v2_files/libs/quarto-html/popper.min.js"></script>
+<script src="Group 2, Final Code v2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Group 2, Final Code v2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Group 2, Final Code v2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Group 2, Final Code v2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Group 2, Final Code v2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Group 2, Final Code v2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Group 2, Final Code v2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="Group 2, Final Code v2_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="Group 2, Final Code v2_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="Group 2, Final Code v2_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="Group 2, Final Code v2_files/libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="Group 2, Final Code v2_files/libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="Group 2, Final Code v2_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="Group 2, Final Code v2_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="Group 2, Final Code v2_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="Group 2, Final Code v2_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Group Quarto Script</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Group 2 </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="reading-in-libraries-and-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-libraries-and-dataset">Reading in Libraries and Dataset</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>corrplot 0.92 loaded</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read clean sheet</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"WDI_Indicators_MainData.xlsx"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(wdi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [209 × 95] (S3: tbl_df/tbl/data.frame)
+ $ Year                                      : num [1:209] 2011 2011 2011 2011 2011 ...
+ $ Time Code                                 : chr [1:209] "YR2011" "YR2011" "YR2011" "YR2011" ...
+ $ Country Name                              : chr [1:209] "Australia" "Austria" "Belgium" "Canada" ...
+ $ Country Code                              : chr [1:209] "AUS" "AUT" "BEL" "CAN" ...
+ $ Percent primary expenditure               : num [1:209] NA 98 NA NA 94.6 ...
+ $ Percent secondary expenditure             : num [1:209] NA 98.1 NA NA 93.6 ...
+ $ Percent tertiary expenditure              : num [1:209] NA 92.6 97 85.2 98.1 ...
+ $ Current education expenditure             : num [1:209] NA 95.9 96.4 89.6 96.3 ...
+ $ Current health expenditure                : num [1:209] 8.54 10.03 10.36 10.38 10.41 ...
+ $ Govt. health expenditure                  : num [1:209] 6.25 7.29 7.9 7.29 8.74 ...
+ $ At least bachelors 25F                    : num [1:209] NA NA 0.306 24.086 0.472 ...
+ $ At least bachelors 25M                    : num [1:209] NA NA 0.704 24.042 0.673 ...
+ $ At least bachelors 25T                    : num [1:209] NA NA 0.499 24.064 0.57 ...
+ $ At least lower secondary 25F              : num [1:209] 93.7 98.9 77.5 92.8 96.5 ...
+ $ At least lower secondary 25M              : num [1:209] 93.5 98.6 82.9 93.5 97.3 ...
+ $ At least lower secondary 25T              : num [1:209] 93.6 99.2 80.1 93.1 96.9 ...
+ $ At least post secondary 25F               : num [1:209] 46.6 23.8 32.1 58.6 33.4 ...
+ $ At least post secondary 25M               : num [1:209] 38.8 29.1 32.3 60.7 27.9 ...
+ $ At least post secondary 25T               : num [1:209] 42.7 26.3 32.2 59.6 30.7 ...
+ $ At least primary 25F                      : num [1:209] NA 100 91.9 92.8 98.2 ...
+ $ At least primary 25M                      : num [1:209] NA 100 94.1 93.5 99.3 ...
+ $ At least primary 25T                      : num [1:209] NA 100 92.9 93.1 98.8 ...
+ $ At least short cycle tertiary 25F         : num [1:209] 42.1 14.2 29.9 50.6 33.4 ...
+ $ At least short cycle tertiary 25M         : num [1:209] 34.6 21.1 29.7 44.5 27.9 ...
+ $ At least short cycle tertiary 25T         : num [1:209] 38.4 17.5 29.8 47.7 30.7 ...
+ $ At least upper secondary 25F              : num [1:209] 72.6 69.1 60.9 82.7 72.2 ...
+ $ At least upper secondary 25M              : num [1:209] 75.5 84.4 64.8 82.8 74.1 ...
+ $ At least upper secondary 25T              : num [1:209] 74.1 76.4 62.8 82.8 73.1 ...
+ $ At least Masters 25F                      : num [1:209] NA NA 0 7.01 0 ...
+ $ At least Masters 25M                      : num [1:209] NA NA 0 8.64 0 ...
+ $ At least Masters 25T                      : num [1:209] NA NA 0 7.8 0 ...
+ $ Doctoral 25F                              : num [1:209] NA 1.05 0 0 0 ...
+ $ Doctoral 25M                              : num [1:209] NA 2.15 0 0 0 ...
+ $ Doctoral 25T                              : num [1:209] NA 1.58 0 0 0 ...
+ $ Female Employed                           : num [1:209] 3.88 5.63 1.72 2.7 1.45 ...
+ $ Male employed                             : num [1:209] 6.82 6.62 4.69 6.65 4.34 ...
+ $ Total Employed                            : num [1:209] 5.49 6.16 3.34 4.78 2.97 ...
+ $ Employment in agriculture T               : num [1:209] 2.82 4.94 1.3 1.77 2.39 ...
+ $ Employment in agriculture F               : num [1:209] 1.893 4.658 0.887 1.08 0.86 ...
+ $ Employment in agriculture M               : num [1:209] 3.59 5.18 1.64 2.38 3.77 ...
+ $ Employment in industry T                  : num [1:209] 20.8 26 23.2 20.5 20 ...
+ $ Employment in industry F                  : num [1:209] 8.56 12.48 9.68 9.05 9.32 ...
+ $ Employment in industry M                  : num [1:209] 31 37.8 34.5 30.7 29.6 ...
+ $ Employment in services T                  : num [1:209] 76.3 69 75.5 77.8 77.6 ...
+ $ Employment in services F                  : num [1:209] 89.6 82.9 89.4 89.9 89.8 ...
+ $ Employment in services M                  : num [1:209] 65.4 57 63.9 66.9 66.6 ...
+ $ Employment to population ratio 15F        : num [1:209] 55.8 51.4 43.7 57.2 54.2 ...
+ $ Employment to population ratio 15M        : num [1:209] 68.7 63.2 55.6 65.9 62.4 ...
+ $ Employment to population ratio 15T        : num [1:209] 62.2 57.1 49.5 61.5 58.3 ...
+ $ Employment to population ratio 15.24F     : num [1:209] 60.2 50 24.2 57.7 54.2 ...
+ $ Employment to population ratio 15.24M     : num [1:209] 60.6 55.3 27.7 55.3 51.9 ...
+ $ Employment to population ratio 15.24T     : num [1:209] 60.4 52.7 26 56.5 53 ...
+ $ Hospital beds                             : num [1:209] 3.78 7.68 6.1 2.8 3.13 ...
+ $ International migrant stock               : num [1:209] NA NA NA NA NA NA NA NA NA NA ...
+ $ Net migration                             : num [1:209] 197657 31887 52464 227075 13495 ...
+ $ Nurses and midwives                       : num [1:209] 10.9 6.86 10.45 9.32 10.16 ...
+ $ Part time employment F                    : num [1:209] 57.1 57 56.1 51.7 54.9 ...
+ $ Part time employment M                    : num [1:209] 30.9 26.6 25.7 32.8 31 ...
+ $ Part time employment T                    : num [1:209] 42.9 40.8 39.5 41.8 42.3 ...
+ $ Physicians                                : num [1:209] 3.31 4.85 2.94 NA 3.79 ...
+ $ Annual % pop growth                       : num [1:209] 1.39 0.337 1.301 0.975 0.412 ...
+ $ Population F                              : num [1:209] 11220344 4303321 5617084 17322863 2809034 ...
+ $ Population M                              : num [1:209] 11119680 4088322 5421180 17016358 2761538 ...
+ $ Population T                              : num [1:209] 22340024 8391643 11038264 34339221 5570572 ...
+ $ R&amp;D expenditure                           : num [1:209] 2.23 2.67 2.17 1.79 2.94 ...
+ $ Researchers in R&amp;D                        : num [1:209] NA 4432 3910 4835 7042 ...
+ $ Scientific &amp; technical journal articles   : num [1:209] 45374 11807 15583 57716 11433 ...
+ $ Self-employed F                           : num [1:209] 11.11 15.17 10.74 11.33 5.89 ...
+ $ Self-employed M                           : num [1:209] 17.9 20.1 17.3 18.9 12 ...
+ $ Self-employed T                           : num [1:209] 14.8 17.8 14.3 15.3 9.1 ...
+ $ F Youth not in edu, emp, or training      : num [1:209] 11.75 8.51 12.03 12.93 7.18 ...
+ $ M Youth not in edu, emp, or training      : num [1:209] 9.49 12.53 11.61 13.45 7.19 ...
+ $ T Youth not in edu, emp, or training      : num [1:209] 10.59 10.56 11.81 13.19 7.19 ...
+ $ Survival to age 65 F                      : num [1:209] 92.7 91.9 90.6 91.5 90.2 ...
+ $ Survival to age 65 M                      : num [1:209] 87.9 84.6 84.2 86.9 84.8 ...
+ $ Unemployment adv edu F                    : num [1:209] 3.43 3.13 3.78 5.49 5.45 ...
+ $ Unemployment adv edu M                    : num [1:209] 2.87 2.15 3.74 5.86 4.73 ...
+ $ T Unemployment with basic education       : num [1:209] 8.61 9.62 13.21 15.58 12.37 ...
+ $ F Unemployment with basic education       : num [1:209] 8.93 8.81 13.81 15.71 11.83 ...
+ $ M Unemployment with basic education       : num [1:209] 8.37 10.47 12.84 15.49 12.8 ...
+ $ T Unemployment with intermediate education: num [1:209] 4.86 4.02 6.78 8.49 6.79 ...
+ $ F Unemployment with intermediate education: num [1:209] 5.86 3.93 7.76 7.88 6.72 ...
+ $ M Unemployment with intermediate education: num [1:209] 4.19 4.09 6.02 9.02 6.84 ...
+ $ F Unemployed                              : num [1:209] 5.31 4.64 7.18 7.17 7.62 ...
+ $ M Unemployed                              : num [1:209] 4.9 4.63 7.11 8.05 7.9 ...
+ $ Total Unemployment                        : num [1:209] 5.08 4.64 7.14 7.64 7.77 ...
+ $ Youth Unemployment F                      : num [1:209] 10.78 9.26 18.74 12.04 14.38 ...
+ $ Youth Unemployment M                      : num [1:209] 11.9 9.1 18.7 15.7 18.1 ...
+ $ Youth Unemployment T                      : num [1:209] 11.37 9.17 18.72 13.91 16.31 ...
+ $ Percent Vulnerable Employment F           : num [1:209] 7.24 9.54 9.01 8.63 4.44 ...
+ $ Percent Vulnerable Employment M           : num [1:209] 11.06 13.52 12.57 12.28 7.64 ...
+ $ Percent Vulnerable Employment             : num [1:209] 9.33 11.67 10.96 10.56 6.13 ...
+ $ Wage and salaried workersF                : num [1:209] 88.9 84.8 89.3 88.7 94.1 ...
+ $ Wage and salaried workersM                : num [1:209] 82.1 79.9 82.7 81.1 88 ...
+ $ Wage and salaried workers T               : num [1:209] 85.2 82.2 85.7 84.7 90.9 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(wdi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 95
+   Year `Time Code` `Country Name` `Country Code` `Percent primary expenditure`
+  &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;          &lt;chr&gt;                                  &lt;dbl&gt;
+1  2011 YR2011      Australia      AUS                                     NA  
+2  2011 YR2011      Austria        AUT                                     98.0
+3  2011 YR2011      Belgium        BEL                                     NA  
+4  2011 YR2011      Canada         CAN                                     NA  
+5  2011 YR2011      Denmark        DNK                                     94.6
+6  2011 YR2011      Finland        FIN                                     91.7
+# ℹ 90 more variables: `Percent secondary expenditure` &lt;dbl&gt;,
+#   `Percent tertiary expenditure` &lt;dbl&gt;,
+#   `Current education expenditure` &lt;dbl&gt;, `Current health expenditure` &lt;dbl&gt;,
+#   `Govt. health expenditure` &lt;dbl&gt;, `At least bachelors 25F` &lt;dbl&gt;,
+#   `At least bachelors 25M` &lt;dbl&gt;, `At least bachelors 25T` &lt;dbl&gt;,
+#   `At least lower secondary 25F` &lt;dbl&gt;, `At least lower secondary 25M` &lt;dbl&gt;,
+#   `At least lower secondary 25T` &lt;dbl&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#View(wdi) #run to see the full dataset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cleaning-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-the-data">Cleaning the Data</h2>
+<p>This code performs a series of data cleaning steps on the dataset <code>wdi</code>. First, it removes two columns that are either redundant or mostly empty: <code>"Time Code"</code> and <code>"International migrant stock"</code>. It then calculates the percentage of missing (null) values in each remaining column and removes any columns where more than 20% of the data is missing, to ensure a more complete and reliable dataset. Next, it eliminates any duplicate rows to prevent redundancy or skewed analysis. Finally, it uses <code>summary()</code> and <code>View()</code> to inspect the cleaned dataset and ensure the remaining data looks accurate and usable for further analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove columns</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">`</span><span class="at">Time Code</span><span class="st">`</span>, <span class="sc">-</span><span class="st">`</span><span class="at">International migrant stock</span><span class="st">`</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Removing columns with more than 30% null values </span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate % of missing values in each column</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>missing_percent <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(<span class="fu">is.na</span>(wdi))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">#View(missing_percent)</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep columns with missing % less than or equal to threshold</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi[, missing_percent <span class="sc">&lt;=</span> threshold]</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#combining columns</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'completedsecondary 25F'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least lower secondary 25F'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least upper secondary 25F'</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'completedsecondary 25M'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least lower secondary 25M'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least upper secondary 25M'</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'completedsecondary 25T'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least lower secondary 25T'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least upper secondary 25T'</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'adveducation 25F'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least post secondary 25F'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least Masters 25F'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'Doctoral 25F'</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'adveducation 25M'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least post secondary 25M'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least Masters 25M'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'Doctoral 25M'</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>wdi<span class="sc">$</span><span class="st">'adveducation 25T'</span> <span class="ot">&lt;-</span> wdi<span class="sc">$</span><span class="st">'At least post secondary 25T'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'At least Masters 25T'</span> <span class="sc">+</span> wdi<span class="sc">$</span><span class="st">'Doctoral 25T'</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="st">'At least lower secondary 25F'</span>, <span class="sc">-</span><span class="st">'At least upper secondary 25F'</span>, <span class="sc">-</span><span class="st">'At least lower secondary 25M'</span>, <span class="sc">-</span><span class="st">'At least upper secondary 25M'</span>, <span class="sc">-</span><span class="st">'At least lower secondary 25T'</span>, <span class="sc">-</span><span class="st">'At least upper secondary 25T'</span>, <span class="sc">-</span><span class="st">'At least post secondary 25F'</span>, <span class="sc">-</span><span class="st">'At least Masters 25F'</span>, <span class="sc">-</span><span class="st">'Doctoral 25F'</span>, <span class="sc">-</span><span class="st">'At least post secondary 25M'</span>, <span class="sc">-</span><span class="st">'At least Masters 25M'</span>, <span class="sc">-</span><span class="st">'Doctoral 25M'</span>,<span class="sc">-</span><span class="st">'At least post secondary 25T'</span>, <span class="sc">-</span><span class="st">'At least Masters 25T'</span>, <span class="sc">-</span><span class="st">'Doctoral 25T'</span>,)</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="co">#checking for dupicate rows </span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span> <span class="fu">distinct</span>()</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="co">#checking to see if the data looks correct</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(wdi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      Year      Country Name       Country Code      
+ Min.   :2011   Length:209         Length:209        
+ 1st Qu.:2013   Class :character   Class :character  
+ Median :2016   Mode  :character   Mode  :character  
+ Mean   :2016                                        
+ 3rd Qu.:2019                                        
+ Max.   :2021                                        
+                                                     
+ Percent primary expenditure Percent secondary expenditure
+ Min.   :69.93               Min.   :77.70                
+ 1st Qu.:87.95               1st Qu.:89.07                
+ Median :91.14               Median :92.30                
+ Mean   :91.04               Mean   :92.16                
+ 3rd Qu.:94.73               3rd Qu.:96.33                
+ Max.   :99.48               Max.   :99.50                
+ NA's   :49                  NA's   :54                   
+ Percent tertiary expenditure Current education expenditure
+ Min.   :70.39                Min.   :73.77                
+ 1st Qu.:88.80                1st Qu.:89.51                
+ Median :90.97                Median :92.42                
+ Mean   :90.94                Mean   :91.71                
+ 3rd Qu.:93.67                3rd Qu.:94.66                
+ Max.   :98.10                Max.   :97.97                
+ NA's   :54                   NA's   :45                   
+ Current health expenditure Govt. health expenditure At least bachelors 25F
+ Min.   : 3.336             Min.   : 2.114           Min.   : 0.2624       
+ 1st Qu.: 9.380             1st Qu.: 6.650           1st Qu.:18.8299       
+ Median :10.380             Median : 7.830           Median :26.9124       
+ Mean   :10.224             Mean   : 7.321           Mean   :24.4896       
+ 3rd Qu.:10.970             3rd Qu.: 8.630           3rd Qu.:32.6700       
+ Max.   :18.756             Max.   :10.693           Max.   :48.6800       
+                                                     NA's   :28            
+ At least bachelors 25M At least bachelors 25T At least primary 25F
+ Min.   : 0.2821        Min.   : 0.2718        Min.   : 85.72      
+ 1st Qu.:19.0000        1st Qu.:19.8688        1st Qu.: 95.24      
+ Median :26.1300        Median :27.8281        Median : 98.34      
+ Mean   :24.4467        Mean   :24.5040        Mean   : 97.28      
+ 3rd Qu.:32.3100        3rd Qu.:31.9123        3rd Qu.: 99.96      
+ Max.   :48.6400        Max.   :47.2900        Max.   :100.00      
+ NA's   :28             NA's   :27             NA's   :20          
+ At least primary 25M At least primary 25T At least short cycle tertiary 25F
+ Min.   : 90.41       Min.   : 82.91       Min.   :12.58                    
+ 1st Qu.: 97.77       1st Qu.: 96.66       1st Qu.:28.88                    
+ Median : 99.12       Median : 98.74       Median :36.01                    
+ Mean   : 98.30       Mean   : 97.72       Mean   :35.83                    
+ 3rd Qu.:100.00       3rd Qu.:100.00       3rd Qu.:42.11                    
+ Max.   :100.00       Max.   :100.00       Max.   :66.15                    
+ NA's   :20           NA's   :19           NA's   :18                       
+ At least short cycle tertiary 25M At least short cycle tertiary 25T
+ Min.   :11.82                     Min.   :12.22                    
+ 1st Qu.:30.14                     1st Qu.:30.07                    
+ Median :33.77                     Median :35.34                    
+ Mean   :35.57                     Mean   :35.70                    
+ 3rd Qu.:40.81                     3rd Qu.:41.29                    
+ Max.   :64.47                     Max.   :65.33                    
+ NA's   :18                        NA's   :17                       
+ Female Employed  Male employed    Total Employed   Employment in agriculture T
+ Min.   :0.2993   Min.   :0.7833   Min.   :0.5561   Min.   :0.9155             
+ 1st Qu.:1.3953   1st Qu.:3.9209   1st Qu.:2.8471   1st Qu.:1.7313             
+ Median :1.8938   Median :5.4041   Median :3.5485   Median :2.4916             
+ Mean   :2.2380   Mean   :5.2809   Mean   :3.9148   Mean   :2.7037             
+ 3rd Qu.:2.9460   3rd Qu.:6.5974   3rd Qu.:4.9831   3rd Qu.:3.6807             
+ Max.   :5.8133   Max.   :9.6496   Max.   :7.3963   Max.   :6.2667             
+                                                                               
+ Employment in agriculture F Employment in agriculture M
+ Min.   :0.04024             Min.   :1.159              
+ 1st Qu.:0.92759             1st Qu.:2.332              
+ Median :1.39335             Median :3.372              
+ Mean   :1.76791             Mean   :3.444              
+ 3rd Qu.:2.38269             3rd Qu.:4.202              
+ Max.   :6.52669             Max.   :6.135              
+                                                        
+ Employment in industry T Employment in industry F Employment in industry M
+ Min.   :13.95            Min.   : 5.552           Min.   :21.39           
+ 1st Qu.:19.44            1st Qu.: 7.757           1st Qu.:28.99           
+ Median :20.48            Median : 8.787           Median :30.93           
+ Mean   :21.93            Mean   : 9.610           Mean   :31.71           
+ 3rd Qu.:24.86            3rd Qu.:11.800           3rd Qu.:33.76           
+ Max.   :34.60            Max.   :14.666           Max.   :41.83           
+                                                                           
+ Employment in services T Employment in services F Employment in services M
+ Min.   :63.94            Min.   :79.35            Min.   :56.34           
+ 1st Qu.:71.25            1st Qu.:85.28            1st Qu.:61.30           
+ Median :76.83            Median :89.80            Median :65.52           
+ Mean   :75.37            Mean   :88.62            Mean   :64.84           
+ 3rd Qu.:78.63            3rd Qu.:91.27            3rd Qu.:68.22           
+ Max.   :83.79            Max.   :94.37            Max.   :75.64           
+                                                                           
+ Employment to population ratio 15F Employment to population ratio 15M
+ Min.   :34.18                      Min.   :48.88                     
+ 1st Qu.:47.29                      1st Qu.:58.40                     
+ Median :52.30                      Median :63.72                     
+ Mean   :51.44                      Mean   :64.04                     
+ 3rd Qu.:56.03                      3rd Qu.:67.60                     
+ Max.   :61.29                      Max.   :91.43                     
+                                                                      
+ Employment to population ratio 15T Employment to population ratio 15.24F
+ Min.   :42.55                      Min.   :12.44                        
+ 1st Qu.:55.17                      1st Qu.:27.50                        
+ Median :58.74                      Median :45.17                        
+ Mean   :58.04                      Mean   :42.70                        
+ 3rd Qu.:61.60                      3rd Qu.:54.76                        
+ Max.   :77.61                      Max.   :76.46                        
+                                                                         
+ Employment to population ratio 15.24M Employment to population ratio 15.24T
+ Min.   :17.37                         Min.   :15.56                        
+ 1st Qu.:29.92                         1st Qu.:27.95                        
+ Median :46.64                         Median :46.26                        
+ Mean   :44.07                         Mean   :43.51                        
+ 3rd Qu.:54.73                         3rd Qu.:53.24                        
+ Max.   :72.34                         Max.   :74.36                        
+                                                                            
+ Hospital beds    Net migration     Nurses and midwives Part time employment F
+ Min.   : 1.060   Min.   :-250741   Min.   : 2.980      Min.   : 1.54         
+ 1st Qu.: 2.750   1st Qu.:  39389   1st Qu.: 8.252      1st Qu.:49.16         
+ Median : 3.605   Median :  85281   Median :10.650      Median :53.87         
+ Mean   : 4.921   Mean   : 204845   Mean   :10.909      Mean   :51.33         
+ 3rd Qu.: 6.178   3rd Qu.: 236854   3rd Qu.:12.285      3rd Qu.:57.46         
+ Max.   :13.380   Max.   :1889129   Max.   :20.530      Max.   :78.35         
+ NA's   :17                         NA's   :9           NA's   :20            
+ Part time employment M Part time employment T   Physicians   
+ Min.   : 0.95          Min.   : 1.06          Min.   :1.499  
+ 1st Qu.:22.44          1st Qu.:34.82          1st Qu.:2.954  
+ Median :29.14          Median :41.51          Median :3.611  
+ Mean   :28.89          Mean   :39.27          Mean   :3.564  
+ 3rd Qu.:35.41          3rd Qu.:44.51          3rd Qu.:4.129  
+ Max.   :45.09          Max.   :60.52          Max.   :5.430  
+ NA's   :20             NA's   :20             NA's   :16     
+ Annual % pop growth  Population F        Population M      
+ Min.   :-1.8537     Min.   :  2413024   Min.   :  2479819  
+ 1st Qu.: 0.3294     1st Qu.:  4303321   1st Qu.:  4368019  
+ Median : 0.5322     Median : 12185876   Median : 12005031  
+ Mean   : 0.6804     Mean   : 25515456   Mean   : 25131808  
+ 3rd Qu.: 0.9175     3rd Qu.: 32731068   3rd Qu.: 31397205  
+ Max.   : 5.3838     Max.   :165091204   Max.   :166957773  
+                                                            
+  Population T       R&amp;D expenditure  Researchers in R&amp;D
+ Min.   :  4953088   Min.   :0.4862   Min.   :1771      
+ 1st Qu.:  8642699   1st Qu.:1.8802   1st Qu.:4200      
+ Median : 24190907   Median :2.7035   Median :5076      
+ Mean   : 50647264   Mean   :2.5221   Mean   :5143      
+ 3rd Qu.: 64128273   3rd Qu.:3.1265   3rd Qu.:6395      
+ Max.   :332048977   Max.   :4.9301   Max.   :9082      
+                     NA's   :15       NA's   :28        
+ Scientific &amp; technical journal articles Self-employed F  Self-employed M 
+ Min.   :  1423                          Min.   : 1.251   Min.   : 3.223  
+ 1st Qu.: 15073                          1st Qu.: 6.046   1st Qu.:12.022  
+ Median : 53624                          Median : 9.901   Median :17.259  
+ Mean   : 67761                          Mean   :10.108   Mean   :16.157  
+ 3rd Qu.: 72733                          3rd Qu.:12.288   3rd Qu.:18.948  
+ Max.   :472448                          Max.   :26.955   Max.   :29.673  
+                                                                          
+ Self-employed T  F Youth not in edu, emp, or training
+ Min.   : 2.850   Min.   : 2.705                      
+ 1st Qu.: 9.924   1st Qu.: 6.955                      
+ Median :13.844   Median : 9.429                      
+ Mean   :13.391   Mean   :10.317                      
+ 3rd Qu.:15.702   3rd Qu.:12.634                      
+ Max.   :28.398   Max.   :21.657                      
+                                                      
+ M Youth not in edu, emp, or training T Youth not in edu, emp, or training
+ Min.   : 2.307                       Min.   : 2.970                      
+ 1st Qu.: 6.690                       1st Qu.: 7.112                      
+ Median :10.019                       Median :10.341                      
+ Mean   :10.158                       Mean   :10.187                      
+ 3rd Qu.:12.904                       3rd Qu.:12.442                      
+ Max.   :22.849                       Max.   :22.183                      
+                                                                          
+ Survival to age 65 F Survival to age 65 M Unemployment adv edu F
+ Min.   :84.59        Min.   :74.75        Min.   : 1.177        
+ 1st Qu.:91.67        1st Qu.:85.67        1st Qu.: 3.132        
+ Median :92.82        Median :87.40        Median : 3.934        
+ Mean   :92.60        Mean   :87.25        Mean   : 4.601        
+ 3rd Qu.:93.80        3rd Qu.:89.03        3rd Qu.: 5.061        
+ Max.   :96.12        Max.   :93.06        Max.   :17.970        
+                                           NA's   :11            
+ Unemployment adv edu M T Unemployment with basic education
+ Min.   : 1.430         Min.   : 0.249                     
+ 1st Qu.: 2.860         1st Qu.: 8.444                     
+ Median : 3.773         Median :11.390                     
+ Mean   : 4.169         Mean   :12.154                     
+ 3rd Qu.: 4.827         3rd Qu.:15.396                     
+ Max.   :15.091         Max.   :35.160                     
+ NA's   :11             NA's   :19                         
+ F Unemployment with basic education M Unemployment with basic education
+ Min.   : 0.552                      Min.   : 0.183                     
+ 1st Qu.: 8.633                      1st Qu.: 8.505                     
+ Median :10.918                      Median :11.562                     
+ Mean   :12.658                      Mean   :11.938                     
+ 3rd Qu.:15.765                      3rd Qu.:15.010                     
+ Max.   :36.806                      Max.   :34.045                     
+ NA's   :19                          NA's   :19                         
+ T Unemployment with intermediate education
+ Min.   : 2.600                            
+ 1st Qu.: 4.385                            
+ Median : 5.851                            
+ Mean   : 6.913                            
+ 3rd Qu.: 8.234                            
+ Max.   :25.560                            
+ NA's   :11                                
+ F Unemployment with intermediate education
+ Min.   : 2.324                            
+ 1st Qu.: 4.422                            
+ Median : 6.325                            
+ Mean   : 7.247                            
+ 3rd Qu.: 8.479                            
+ Max.   :27.168                            
+ NA's   :11                                
+ M Unemployment with intermediate education  F Unemployed     M Unemployed   
+ Min.   : 2.502                             Min.   : 2.168   Min.   : 1.052  
+ 1st Qu.: 4.277                             1st Qu.: 4.423   1st Qu.: 4.299  
+ Median : 5.533                             Median : 5.679   Median : 5.669  
+ Mean   : 6.699                             Mean   : 6.773   Mean   : 6.589  
+ 3rd Qu.: 8.402                             3rd Qu.: 7.673   3rd Qu.: 8.064  
+ Max.   :24.604                             Max.   :26.676   Max.   :25.605  
+ NA's   :11                                                                  
+ Total Unemployment Youth Unemployment F Youth Unemployment M
+ Min.   : 1.640     Min.   : 3.182       Min.   : 4.130      
+ 1st Qu.: 4.296     1st Qu.: 8.757       1st Qu.: 9.359      
+ Median : 5.674     Median :11.241       Median :12.834      
+ Mean   : 6.620     Mean   :15.091       Mean   :16.074      
+ 3rd Qu.: 7.830     3rd Qu.:18.546       3rd Qu.:20.763      
+ Max.   :26.094     Max.   :54.565       Max.   :56.204      
+                                                             
+ Youth Unemployment T Percent Vulnerable Employment F
+ Min.   : 3.668       Min.   : 0.2211                
+ 1st Qu.: 8.743       1st Qu.: 4.4892                
+ Median :12.147       Median : 7.8137                
+ Mean   :15.513       Mean   : 7.8698                
+ 3rd Qu.:19.934       3rd Qu.: 9.4306                
+ Max.   :55.444       Max.   :23.7952                
+                                                     
+ Percent Vulnerable Employment M Percent Vulnerable Employment
+ Min.   : 0.3131                 Min.   : 0.2964              
+ 1st Qu.: 8.0576                 1st Qu.: 6.4985              
+ Median :10.9719                 Median : 9.5915              
+ Mean   :10.8766                 Mean   : 9.4760              
+ 3rd Qu.:13.5170                 3rd Qu.:11.5807              
+ Max.   :21.1910                 Max.   :22.2209              
+                                                              
+ Wage and salaried workersF Wage and salaried workersM
+ Min.   :73.04              Min.   :70.33             
+ 1st Qu.:87.71              1st Qu.:81.05             
+ Median :90.10              Median :82.74             
+ Mean   :89.89              Mean   :83.84             
+ 3rd Qu.:93.95              3rd Qu.:87.98             
+ Max.   :98.75              Max.   :96.78             
+                                                      
+ Wage and salaried workers T completedsecondary 25F completedsecondary 25M
+ Min.   :71.60               Min.   :109.9          Min.   :118.5         
+ 1st Qu.:84.30               1st Qu.:152.8          1st Qu.:161.9         
+ Median :86.16               Median :168.1          Median :173.4         
+ Mean   :86.61               Mean   :162.4          Mean   :168.7         
+ 3rd Qu.:90.08               3rd Qu.:176.2          3rd Qu.:182.1         
+ Max.   :97.15               Max.   :192.4          Max.   :192.2         
+                             NA's   :17             NA's   :17            
+ completedsecondary 25T adveducation 25F adveducation 25M adveducation 25T
+ Min.   :114.1          Min.   :13.27    Min.   :12.26    Min.   :12.79   
+ 1st Qu.:157.9          1st Qu.:39.06    1st Qu.:42.99    1st Qu.:41.91   
+ Median :169.2          Median :48.00    Median :48.65    Median :48.55   
+ Mean   :165.3          Mean   :47.72    Mean   :48.77    Mean   :48.32   
+ 3rd Qu.:178.9          3rd Qu.:55.92    3rd Qu.:55.50    3rd Qu.:55.31   
+ Max.   :192.3          Max.   :76.13    Max.   :74.93    Max.   :75.54   
+ NA's   :16             NA's   :44       NA's   :44       NA's   :43      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(wdi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="correlation-matricies" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-matricies">Correlation Matricies</h2>
+<p>This correlation matrix determines the positive or negative relationships between government spending and quality of life variables including survival rate, employment rates, and net migrations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>corr_data <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Current health expenditure</span><span class="st">`</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Current education expenditure</span><span class="st">`</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Survival to age 65 F</span><span class="st">`</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Survival to age 65 M</span><span class="st">`</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Unemployment</span><span class="st">`</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Net migration</span><span class="st">`</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(corr_data, <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print matrix (rounded)</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(cor_matrix, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                              Current health expenditure
+Current health expenditure                          1.00
+Govt. health expenditure                            0.61
+Current education expenditure                       0.19
+Survival to age 65 F                               -0.76
+Survival to age 65 M                               -0.70
+Total Unemployment                                 -0.16
+Net migration                                       0.64
+                              Govt. health expenditure
+Current health expenditure                        0.61
+Govt. health expenditure                          1.00
+Current education expenditure                     0.32
+Survival to age 65 F                             -0.44
+Survival to age 65 M                             -0.36
+Total Unemployment                               -0.12
+Net migration                                     0.16
+                              Current education expenditure
+Current health expenditure                             0.19
+Govt. health expenditure                               0.32
+Current education expenditure                          1.00
+Survival to age 65 F                                  -0.32
+Survival to age 65 M                                  -0.27
+Total Unemployment                                     0.41
+Net migration                                          0.03
+                              Survival to age 65 F Survival to age 65 M
+Current health expenditure                   -0.76                -0.70
+Govt. health expenditure                     -0.44                -0.36
+Current education expenditure                -0.32                -0.27
+Survival to age 65 F                          1.00                 0.83
+Survival to age 65 M                          0.83                 1.00
+Total Unemployment                            0.12                -0.03
+Net migration                                -0.57                -0.56
+                              Total Unemployment Net migration
+Current health expenditure                 -0.16          0.64
+Govt. health expenditure                   -0.12          0.16
+Current education expenditure               0.41          0.03
+Survival to age 65 F                        0.12         -0.57
+Survival to age 65 M                       -0.03         -0.56
+Total Unemployment                          1.00         -0.19
+Net migration                              -0.19          1.00</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize for readability</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">"color"</span>, <span class="at">type =</span> <span class="st">"upper"</span>, <span class="at">tl.col =</span> <span class="st">"black"</span>, <span class="at">addCoef.col =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="scatterplots-showing-the-relationship-between-government-healthcare-spending-and-survival-rates-by-gender" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplots-showing-the-relationship-between-government-healthcare-spending-and-survival-rates-by-gender"><strong>Scatterplots Showing the Relationship Between Government Healthcare Spending and Survival Rates by Gender</strong></h2>
+<section id="female-survival-rates" class="level3">
+<h3 class="anchored" data-anchor-id="female-survival-rates">Female Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># scatterplot with regression line to see the relationship between govt. health expenditure and female survival rates </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wdi, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Survival to age 65 F</span><span class="st">`</span>)) <span class="sc">+</span>   <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#D55E00"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span>   <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"darkred"</span>, <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span>   <span class="fu">labs</span>(     <span class="at">title =</span> <span class="st">"Female Survival to Age 65 vs Government Health Expenditure"</span>,     <span class="at">x =</span> <span class="st">"Government Health Expenditure (% of GDP)"</span>,     <span class="at">y =</span> <span class="st">"Survival to Age 65 (Female) (%)"</span>   ) <span class="sc">+</span>   <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="male-survival-rates" class="level3">
+<h3 class="anchored" data-anchor-id="male-survival-rates">Male Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># scatterplot with regression line to see the relationship between govt. health expenditure and male survival rates </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wdi, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Survival to age 65 M</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#0072B2"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Male Survival to Age 65 vs Government Health Expenditure"</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Government Health Expenditure (% of GDP)"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Survival to Age 65 (Male) (%)"</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This was a surprising output as it sows negative relationships between government spending on healthcare and survival rates in both males and females. We then decided to look at survival rates and spending by individual countries.</p>
+</section>
+</section>
+<section id="boxplots-of-male-and-female-survival-rates-by-country" class="level2">
+<h2 class="anchored" data-anchor-id="boxplots-of-male-and-female-survival-rates-by-country">Boxplots of Male and Female Survival Rates by Country</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'plotly' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plotly'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    last_plot</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:stats':
+
+    filter</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:graphics':
+
+    layout</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stats)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(graphics)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">#pivot data to long format to use for boxplots</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>wdi_long <span class="ot">&lt;-</span> wdi <span class="sc">%&gt;%</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">Survival to age 65 M</span><span class="st">`</span>, <span class="st">`</span><span class="at">Survival to age 65 F</span><span class="st">`</span>),</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Gender"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Survival"</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(Survival)</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the data </span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>S_box<span class="ot">&lt;-</span><span class="fu">ggplot</span>(wdi_long, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Country Code</span><span class="st">`</span>, <span class="at">y =</span> Survival, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">77</span>, <span class="cn">NA</span>))<span class="sc">+</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Survival to Age 65 (Male vs Female) across Countries"</span>,</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country"</span>,</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Survival to Age 65 (%)"</span>,</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Gender"</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">60</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>S_box2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(wdi_long, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Country Code</span><span class="st">`</span>, <span class="at">y =</span> Survival, <span class="at">fill =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span>  <span class="co"># narrower boxplots to reduce crowding</span></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">scales =</span> <span class="st">"fixed"</span>) <span class="sc">+</span>  <span class="co"># vertical alignment</span></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>))) <span class="sc">+</span>  <span class="co"># more spacing around edges</span></span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Survival to Age 65 by Gender across Countries"</span>,</span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country"</span>,</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Survival to Age 65 (%)"</span></span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">7.5</span>),  <span class="co"># slightly smaller</span></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">face =</span> <span class="st">"bold"</span>),  <span class="co"># make facet labels stand out</span></span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(S_box2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 5 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-a690741484cd7cf484b0" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-a690741484cd7cf484b0">{"x":{"data":[{"x":[2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,8,8,8,8,8,8,8,8,8,8,8,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,7,7,7,7,7,7,7,7,7,7,7,13,13,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,14,14,14,15,15,15,15,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16,16,17,17,17,17,17,17,17,17,17,17,17,9,9,9,9,9,9,9,9,9,9,9,18,18,18,18,18,18,18,18,18,18,18,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,12,12,12,12,12,12,12,12,12,12,12,19,19,19,19,19,19,19,19,19,19,19],"y":[93.033867999999998,92.943617000000003,92.868423000000007,92.699608999999995,93.269492,92.821151999999998,93.057990000000004,93.331624000000005,93.408546999999999,92.830391000000006,93.168789000000004,91.923139000000006,92.618876999999998,92.833072999999999,92.096221,92.823711000000003,92.960347999999996,92.415347999999994,92.268483000000003,93.036648,92.171729999999997,93.073777000000007,90.583636999999996,90.875760999999997,90.923051999999998,91.672635999999997,92.223268000000004,91.752404999999996,91.585410999999993,91.447314000000006,91.054935,91.971010000000007,92.065814000000003,91.513543999999996,91.474252000000007,91.655561000000006,91.987767000000005,91.673878000000002,91.719710000000006,91.583078,91.594127,91.639869000000004,91.429300999999995,91.621565000000004,90.215292000000005,92.189131000000003,91.737900999999994,90.815905999999998,90.491496999999995,92.233914999999996,92.241820000000004,91.019998000000001,91.861665000000002,91.074200000000005,91.091328000000004,92.832487,91.905596000000003,93.139773000000005,92.984818000000004,93.082975000000005,92.307085000000001,91.912008,93.323884000000007,92.922511,92.629390999999998,92.817594,92.358185000000006,92.477377000000004,91.977456000000004,92.450537999999995,92.312027999999998,92.329497000000003,92.483858999999995,92.080537000000007,92.345211000000006,92.301829999999995,92.162554999999998,91.581877000000006,91.288407000000007,92.075883000000005,92.122854000000004,91.875352000000007,91.795473999999999,91.712048999999993,91.820284999999998,91.489406000000002,91.879064,91.625856999999996,93.700334999999995,93.855142999999998,93.698479000000006,93.707918000000006,93.781948999999997,93.434717000000006,93.360938000000004,93.587107000000003,93.624521999999999,93.915227999999999,94.055218999999994,93.843806000000001,94.461402000000007,93.932980000000001,94.508640999999997,94.289664999999999,94.002516999999997,94.567238000000003,94.484074000000007,94.234026999999998,94.569141000000002,93.068156000000002,94.995647000000005,94.444460000000007,95.192480000000003,93.851101999999997,95.900150999999994,95.497911000000002,94.001244999999997,95.300612999999998,96.123594999999995,95.761762000000004,95.036581999999996,91.553532000000004,91.981117999999995,91.936998000000003,91.638649999999998,91.615813000000003,92.255696,91.140654999999995,91.382527999999994,91.089586999999995,92.238207000000003,91.829492000000002,93.056956999999997,93.846526999999995,91.994248999999996,93.448646999999994,93.044835000000006,92.897987999999998,93.937117000000001,93.469665000000006,92.395443999999998,92.504908,93.718957000000003,93.579663999999994,93.970600000000005,93.776313000000002,94.078739999999996,93.838220000000007,93.902985000000001,93.727618000000007,93.846699999999998,93.966871999999995,93.827787000000001,93.640405000000001,93.171519000000004,93.446706000000006,93.311372000000006,92.736431999999994,92.817231000000007,92.781008,93.636600999999999,93.130116999999998,93.802505999999994,92.969476999999998,93.868146999999993,93.45635,93.937881000000004,93.282749999999993,94.258752000000001,93.273365999999996,93.858682999999999,94.311598000000004,94.329486000000003,93.820616000000001,93.799937999999997,94.338857000000004,95.897938999999994,95.993195999999998,95.091949999999997,95.613335000000006,95.450961000000007,95.174006000000006,95.034159000000002,94.619212000000005,95.297804999999997,95.767259999999993,95.579442999999998,91.250112000000001,91.361521999999994,91.252833999999993,91.211809000000002,91.146196000000003,90.745061000000007,91.272053999999997,91.096971999999994,90.986844000000005,91.370665000000002,90.662606999999994,86.083526000000006,87.888604999999998,88.042552999999998,87.740088999999998,88.081334999999996,87.558712,88.028523000000007,87.548253000000003,87.818218999999999,87.757762,84.585182000000003],"hoverinfo":"y","type":"box","fillcolor":"rgba(248,118,109,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"Survival to age 65 F","legendgroup":"Survival to age 65 F","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,8,8,8,8,8,8,8,8,8,8,8,10,10,10,10,10,10,10,10,10,10,10,11,11,11,11,11,11,11,11,11,11,11,7,7,7,7,7,7,7,7,7,7,7,13,13,13,13,13,13,13,13,13,13,13,14,14,14,14,14,14,14,14,14,14,14,15,15,15,15,15,15,15,15,15,15,15,16,16,16,16,16,16,16,16,16,16,16,17,17,17,17,17,17,17,17,17,17,17,9,9,9,9,9,9,9,9,9,9,9,18,18,18,18,18,18,18,18,18,18,18,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,12,12,12,12,12,12,12,12,12,12,12,19,19,19,19,19,19,19,19,19,19,19],"y":[87.946271999999993,88.341899999999995,88.448023000000006,88.470920000000007,89.011284000000003,88.171518000000006,88.965091999999999,88.310959999999994,88.514336,88.660493000000002,88.445303999999993,84.595909000000006,86.059031000000004,86.562974999999994,86.661850999999999,87.028248000000005,85.040094999999994,87.167653000000001,86.015968000000001,87.035216000000005,85.418593999999999,87.575717999999995,84.217765,85.589613999999997,86.819019999999995,84.229360999999997,87.010051000000004,87.306551999999996,86.459404000000006,85.985185000000001,86.622829999999993,84.895792,85.568282999999994,86.881067000000002,86.834002999999996,86.747264000000001,87.097638000000003,87.047931000000005,87.066965999999994,85.669888,87.188984000000005,85.922707000000003,87.122853000000006,87.254457000000002,84.809143000000006,86.959756999999996,85.351962,86.864180000000005,85.445006000000006,87.993144000000001,87.386307000000002,88.095659999999995,86.170241000000004,85.666939999999997,86.328446,83.621544999999998,82.825941,84.690134,85.924999999999997,85.862661000000003,85.289409000000006,85.785162,84.040722000000002,86.627859999999998,85.273263999999998,86.415383000000006,83.979669999999999,85.344374999999999,85.570932999999997,84.545044000000004,83.352108999999999,85.176505000000006,84.699098000000006,84.355918000000003,85.294094000000001,83.581678999999994,85.002885000000006,84.372764000000004,84.686279999999996,85.213762000000003,86.014304999999993,85.845827,84.744754999999998,85.511724000000001,85.649518999999998,84.890600000000006,85.151636999999994,85.190026000000003,88.516880999999998,88.937436000000005,88.912591000000006,88.326808,88.880453000000003,89.444925999999995,89.127951999999993,89.085966999999997,89.127966999999998,89.951661999999999,89.615945999999994,89.758356000000006,87.742958999999999,89.345526000000007,88.789764000000005,86.890755999999996,89.480547000000001,89.027137999999994,88.055880000000002,89.612182000000004,88.421175000000005,89.721564000000001,85.748191000000006,86.823577999999998,89.972288000000006,88.987050999999994,89.328489000000005,88.847769,89.335235999999995,87.478335000000001,84.818855999999997,88.261898000000002,84.477557000000004,89.067582999999999,88.821105000000003,89.6036,89.196788999999995,88.895770999999996,88.711144000000004,88.141673999999995,88.088797,88.367603000000003,88.911798000000005,89.091685999999996,90.132611999999995,90.056901999999994,89.458675999999997,90.598849000000001,87.643534000000002,90.020014000000003,89.411323999999993,88.051558999999997,90.701278000000002,88.265253000000001,88.900903999999997,87.460083999999995,87.982892000000007,87.717625999999996,86.675663999999998,87.737776999999994,88.406242000000006,86.393568999999999,88.018120999999994,87.140551000000002,87.544931000000005,87.404161000000002,89.547773000000007,89.774590000000003,89.317071999999996,89.938100000000006,88.797770999999997,88.997015000000005,90.047059000000004,90.563540000000003,89.319714000000005,89.031724999999994,90.324742000000001,90.018552,88.869150000000005,89.380054000000001,90.257253000000006,90.383733000000007,89.536589000000006,88.860354000000001,88.991140999999999,90.810427000000004,90.379345999999998,90.368386000000001,92.539609999999996,92.451665000000006,92.858093999999994,92.954368000000002,92.772694999999999,92.694253000000003,92.344202999999993,92.618238000000005,90.592012999999994,93.064189999999996,91.234305000000006,86.612675999999993,86.642959000000005,86.754936999999998,86.911154999999994,86.818190000000001,86.337023000000002,86.816415000000006,85.508459999999999,86.667292000000003,86.655961000000005,85.455792000000002,80.553646999999998,null,80.727098999999995,80.710977,null,80.094890000000007,80.665755000000004,null,null,null,80.253748999999999],"hoverinfo":"y","type":"box","fillcolor":"rgba(0,191,196,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)"},"size":5.6692913385826778},"line":{"color":"rgba(51,51,51,1)","width":1.8897637795275593},"name":"Survival to age 65 M","legendgroup":"Survival to age 65 M","showlegend":true,"xaxis":"x","yaxis":"y2","frame":null}],"layout":{"margin":{"t":59.437110834371111,"r":7.3059360730593621,"b":38.455790784557905,"l":37.260273972602747},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"<b> Survival to Age 65 by Gender across Countries <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.596928185969279},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.80000000000000004,20.800000000000001],"tickmode":"array","ticktext":["ARE","AUS","AUT","BEL","CAN","CHE","DEU","DNK","ESP","FIN","FRA","GBR","ITA","JPN","KOR","NLD","NOR","SWE","USA"],"tickvals":[1,1.9999999999999998,3,4,5,6,7.0000000000000009,8,9,10,11,12,13,13.999999999999998,15.000000000000002,16,17,18,19],"categoryorder":"array","categoryarray":["ARE","AUS","AUT","BEL","CAN","CHE","DEU","DNK","ESP","FIN","FRA","GBR","ITA","JPN","KOR","NLD","NOR","SWE","USA"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":9.9626400996264},"tickangle":-45,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"y2","title":"","hoverformat":".2f"},"annotations":[{"text":"Country","x":0.5,"y":0,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"top","annotationType":"axis","yshift":-20.190950601909503},{"text":"Survival to Age 65 (%)","x":0,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"right","yanchor":"center","annotationType":"axis","xshift":-21.917808219178081},{"text":"Survival to age 65 F","x":0.5,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"},{"text":"Survival to age 65 M","x":0.5,"y":0.48287671232876711,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(26,26,26,1)","family":"","size":14.611872146118724},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"bottom"}],"yaxis":{"domain":[0.51712328767123283,1],"automargin":true,"type":"linear","autorange":false,"range":[79.193820250000002,96.929774749999993],"tickmode":"array","ticktext":["80","85","90","95"],"tickvals":[80,85,90,95],"categoryorder":"array","categoryarray":["80","85","90","95"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0.51712328767123283,"y1":1},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":26.301369863013704,"yanchor":1,"ysizemode":"pixel"},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":0.48287671232876711},{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":26.301369863013704,"yanchor":0.48287671232876711,"ysizemode":"pixel"}],"yaxis2":{"type":"linear","autorange":false,"range":[79.193820250000002,96.929774749999993],"tickmode":"array","ticktext":["80","85","90","95"],"tickvals":[80,85,90,95],"categoryorder":"array","categoryarray":["80","85","90","95"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":false,"domain":[0,0.48287671232876711],"gridcolor":null,"gridwidth":0,"zeroline":false,"anchor":"x","title":"","hoverformat":".2f"},"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"dae022387ee9":{"x":{},"y":{},"fill":{},"type":"box"}},"cur_data":"dae022387ee9","visdat":{"dae022387ee9":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>S_box2 <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 5 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This graph provided us with visuals on survival rates by gender and countries. The USA is noticeable lower in survival rates. We decided to next look at government spending my country. Based on the scatterplots from above, we would expect to see USA with one of the highest government spendings on healthcare.</p>
+</section>
+<section id="line-graph-showing-government-healthcare-spending-by-country" class="level2">
+<h2 class="anchored" data-anchor-id="line-graph-showing-government-healthcare-spending-by-country">Line Graph Showing Government Healthcare Spending by Country</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot line graph of all countires and highlight US (red)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wdi, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">`</span><span class="at">Country Name</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_color_manual</span>(</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"United States"</span> <span class="ot">=</span> <span class="st">"#e31a1c"</span>, <span class="st">"Australia"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Austria"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Belgium"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Canada"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Denmark"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Finland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"France"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Germany"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Italy"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Japan"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Korea, Rep."</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Netherlands"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Norway"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Spain"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Sweden"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Switzerland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Arab Emirates"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Kingdom"</span> <span class="ot">=</span> <span class="st">"gray70"</span>)) <span class="sc">+</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Government Health Spending (% of GDP) Over 10 Years"</span>,</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"% of GDP Spent on Health"</span>,</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Then we wanted to see differences in the countries governments, one of those actions being healthcare spending. This was interesting because we saw a spike in 2020 in healthcare spending, especially in the USA, as shown by the red line in the graph above.</p>
+</section>
+<section id="scatterplots-comparing-usa-govt.-healthcare-expenditures-vs.-survival-rates-by-gender-to-other-countries" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplots-comparing-usa-govt.-healthcare-expenditures-vs.-survival-rates-by-gender-to-other-countries">Scatterplots comparing USA Govt. Healthcare Expenditures vs.&nbsp;Survival Rates by Gender to other countries</h2>
+<section id="female-survival-rates-1" class="level3">
+<h3 class="anchored" data-anchor-id="female-survival-rates-1">Female Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#scatterplot of Government health expenditure vs. survival rate on females</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wdi, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Survival to age 65 F</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">`</span><span class="at">Country Name</span><span class="st">`</span> )) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"United States"</span> <span class="ot">=</span> <span class="st">"#e31a1c"</span>, <span class="st">"Australia"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Austria"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Belgium"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Canada"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Denmark"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Finland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"France"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Germany"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Italy"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Japan"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Korea, Rep."</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Netherlands"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Norway"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Spain"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Sweden"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Switzerland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Arab Emirates"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Kingdom"</span> <span class="ot">=</span> <span class="st">"gray70"</span>)) <span class="sc">+</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Government Health Spending vs Survival Rate for Females"</span>,</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"% of GDP Spent on Health"</span>,</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Survival Rate for Females"</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="male-survival-rates-1" class="level3">
+<h3 class="anchored" data-anchor-id="male-survival-rates-1">Male Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#scatterplot of Government health expenditure vs. survival rate on males</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wdi, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span>, <span class="at">y =</span> <span class="st">`</span><span class="at">Survival to age 65 M</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">`</span><span class="at">Country Name</span><span class="st">`</span> )) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"United States"</span> <span class="ot">=</span> <span class="st">"#e31a1c"</span>, <span class="st">"Australia"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Austria"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Belgium"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Canada"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Denmark"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Finland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"France"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Germany"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Italy"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Japan"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Korea, Rep."</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Netherlands"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Norway"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Spain"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Sweden"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"Switzerland"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Arab Emirates"</span> <span class="ot">=</span> <span class="st">"gray70"</span>, <span class="st">"United Kingdom"</span> <span class="ot">=</span> <span class="st">"gray70"</span>)) <span class="sc">+</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Goverment Health Spending vs Survival Rate for Males"</span>,</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"% of GDP Spent on Health"</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Survival Rate for Males"</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Group-2,-Final-Code-v2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>When exploring United States' health expenditure and their survival rate, we noticed that compared to the other advanced countries it seemed like they had a higher percentage of GDP spent on health but lower survival rates for both males and females.</p>
+</section>
+</section>
+<section id="regression-with-interaction-variable-between-amount-of-physicians-and-government-healthcare-spending" class="level2">
+<h2 class="anchored" data-anchor-id="regression-with-interaction-variable-between-amount-of-physicians-and-government-healthcare-spending">Regression with Interaction Variable between Amount of Physicians and Government Healthcare Spending</h2>
+<section id="female-survival-rates-2" class="level3">
+<h3 class="anchored" data-anchor-id="female-survival-rates-2">Female Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression including interaction variable to test a countrys health care expenditure AND amount of physicians on female survival rates</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="st">`</span><span class="at">Survival to age 65 F</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span> <span class="sc">*</span> Physicians, <span class="at">data =</span> wdi)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = `Survival to age 65 F` ~ `Govt. health expenditure` * 
+    Physicians, data = wdi)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.8923 -0.6338  0.0246  0.6948  3.6342 
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                           99.23299    1.09251  90.830  &lt; 2e-16 ***
+`Govt. health expenditure`            -1.07977    0.15575  -6.933 6.34e-11 ***
+Physicians                            -0.84295    0.34342  -2.455 0.015009 *  
+`Govt. health expenditure`:Physicians  0.16344    0.04672   3.498 0.000584 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 1.188 on 189 degrees of freedom
+  (16 observations deleted due to missingness)
+Multiple R-squared:  0.454, Adjusted R-squared:  0.4454 
+F-statistic: 52.39 on 3 and 189 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="male-survival-rates-2" class="level3">
+<h3 class="anchored" data-anchor-id="male-survival-rates-2">Male Survival Rates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># regression including interaction variable to test a countrys health care expenditure AND amount of physicians on male survival rates</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="st">`</span><span class="at">Survival to age 65 M</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Govt. health expenditure</span><span class="st">`</span> <span class="sc">*</span> Physicians, <span class="at">data =</span> wdi)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = `Survival to age 65 M` ~ `Govt. health expenditure` * 
+    Physicians, data = wdi)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-10.947  -1.098   0.415   1.226   4.864 
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                           94.70999    1.97317  47.999  &lt; 2e-16 ***
+`Govt. health expenditure`            -1.34708    0.28130  -4.789 3.38e-06 ***
+Physicians                            -0.64905    0.62024  -1.046    0.297    
+`Govt. health expenditure`:Physicians  0.18129    0.08438   2.148    0.033 *  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.146 on 189 degrees of freedom
+  (16 observations deleted due to missingness)
+Multiple R-squared:  0.3164,    Adjusted R-squared:  0.3055 
+F-statistic: 29.16 on 3 and 189 DF,  p-value: 1.536e-15</code></pre>
+</div>
+</div>
+<p>One the regression was run with an interaction variable between government healthcare spending and physicians, there was a positive and significant coefficient in both males and females. This was a discovery that helped us to come up with a final recommendation to governments on how to most effectively use resources to increase survival rates in their country.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
